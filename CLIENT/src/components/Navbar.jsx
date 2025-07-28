@@ -7,7 +7,7 @@ export const Navbar = ({setShowLogin}) => {
   const navigate = useNavigate()
 
   return (
-    <div className="flex justify-between sm:justify-evenly items-center px-4 py-3 border-b sm:border-b border-borderColor">
+    <div className="flex justify-between sm:justify-evenly items-center px-4 py-3 border-b sm:border-b border-borderColor bg-light">
 
       <Link to="/">
         <img src={assets.logo} alt="logo" className="h-8" />
