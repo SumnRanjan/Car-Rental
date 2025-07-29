@@ -5,6 +5,7 @@ import { Home } from "./pages/Home"
 import { Cars } from "./pages/Cars"
 import { CarDetails } from "./pages/CarDetails"
 import MyBookings from "./pages/MyBookings"
+import { Footer } from "./components/Footer"
 
 
   export const App = () => {
@@ -22,7 +23,8 @@ import MyBookings from "./pages/MyBookings"
           <Route path="/car-details/:id" element={<CarDetails/>} />
           <Route path="/my-bookings" element={<MyBookings/>} />
         </Routes>
-
+        
+        <Footer/>
       </>
     )
   }
