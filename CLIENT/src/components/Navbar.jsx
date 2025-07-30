@@ -1,13 +1,16 @@
-import { Link , useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { assets, menuLinks } from "../assets/assets";
 import { useState } from "react";
 
-export const Navbar = ({setShowLogin}) => {
+export const Navbar = ({ setShowLogin }) => {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   return (
-    <div className="flex justify-between sm:justify-evenly items-center px-4 py-3 border-b sm:border-b border-borderColor bg-light">
+    <div className={`flex justify-between sm:justify-evenly items-center px-4 py-3 border-b sm:border-b border-borderColor ${isHomePage ? "bg-light" : "bg-white"}`}>
 
       <Link to="/">
         <img src={assets.logo} alt="logo" className="h-8" />
@@ -17,7 +20,7 @@ export const Navbar = ({setShowLogin}) => {
         className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16
           max-sm:border-t-0 border-borderColor right-0 flex flex-col sm:flex-row
           items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all
-          duration-300 z-50 } 
+          duration-300 z-50 
           ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}>
 
         {menuLinks.map((link, index) => (
@@ -25,20 +28,30 @@ export const Navbar = ({setShowLogin}) => {
             {link.name}
           </Link>
         ))}
-      
 
-      <div className="hidden lg:flex items-center text-sm gap-2 border border-borderColor px-3 rounded-full max-w-56 ">
-        <input type="text" className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500" placeholder="Search Products"/>
-        <img src={assets.search_icon} alt="search icon" />
+        <div className="hidden lg:flex items-center text-sm gap-2 border border-borderColor px-3 rounded-full max-w-56 ">
+          <input
+            type="text"
+            className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
+            placeholder="Search Products"
+          />
+          <img src={assets.search_icon} alt="search icon" />
+        </div>
+
+        <div className="flex max-sm:flex-col items-start sm:items-center gap-6">
+          <button onClick={() => navigate()} className="cursor-pointer ">
+            Dashboard
+          </button>
+          <button
+            onClick={() => setShowLogin(true)}
+            className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg"
+          >
+            Login
+          </button>
+        </div>
       </div>
-      
-      <div className="flex max-sm:flex-col items-start sm:items-center gap-6">
-        <button onClick={() => navigate()} className="cursor-pointer ">Dashboard</button>
-        <button onClick={() => setShowLogin(true)} className="cursor-pointer px-8 py-2 bg-primary  
-        hover:bg-primary-dull transition-all text-white rounded-lg">Login</button>
-      </div>
-      </div>
-      <button  className="sm:hidden cursor-pointer" aria-label="Menu" onClick={() => setOpen(!open)} >
+
+      <button className="sm:hidden cursor-pointer" aria-label="Menu" onClick={() => setOpen(!open)}>
         <img src={open ? assets.close_icon : assets.menu_icon} alt="menu" className="h-6 w-6" />
       </button>
     </div>
