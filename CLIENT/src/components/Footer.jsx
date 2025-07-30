@@ -4,7 +4,7 @@ import { assets } from "../assets/assets"
 export const Footer = () => {
   return (
     <div className='px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-gray-500'>
-            <div className='flex flex-wrap justify-between items-start gap-8 pb-6 border-borderColor'>
+            <div className='flex flex-wrap justify-between items-start gap-8 pb-6 border-borderColor border-b'>
                 <div >
                     <img src={assets.logo} alt="logo" className='h-8 md:h-9' />
                     <p className='max-w-80 mt-3'>
@@ -49,12 +49,13 @@ export const Footer = () => {
                 </div>
             </div>
             
-            <hr className='border-gray-300 mt-8' />
             <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
                 <p>© {new Date().getFullYear()} Brand • All rights reserved</p>
-                <ul class="flex items-center gap-2  text-gray-500">
-                  <li><a href="#">Privacy</a> <span class="mx-2">|</span></li>
-                  <li><a href="#">Terms</a> <span class="mx-2">|</span></li>
+                <ul class="flex items-center gap-4 text-gray-500">
+                  <li><a href="#">Privacy</a> </li>
+                  <li>|</li>
+                  <li><a href="#">Terms</a></li>
+                  <li>|</li>
                   <li><a href="#">Cookies</a></li>
                 </ul>
 

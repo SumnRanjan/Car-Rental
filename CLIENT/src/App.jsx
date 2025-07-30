@@ -24,7 +24,8 @@ import { Footer } from "./components/Footer"
           <Route path="/my-bookings" element={<MyBookings/>} />
         </Routes>
         
-        <Footer/>
+        {!isOwnerPath && <Footer/>}
+        
       </>
     )
   }
