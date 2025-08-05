@@ -13,9 +13,10 @@ import { ManageBookings } from "./pages/owner/ManageBookings"
 import { ManageCars } from "./pages/owner/ManageCars"
 
   export const App = () => {
+    const location = useLocation()
     // eslint-disable-next-line no-unused-vars
     const[showLogin , setShowLogin] =  useState(false)
-    const isOwnerPath = useLocation().pathname.startsWith('/owner')
+    const isOwnerPath = location.pathname.startsWith('/owner')
 
     return (
       <>  
