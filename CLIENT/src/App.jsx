@@ -8,7 +8,7 @@ import MyBookings from "./pages/MyBookings"
 import { Footer } from "./components/Footer"
 import { Layout } from './pages/owner/Layout'
 import { AddCar } from "./pages/owner/AddCar"
-import { DashBoard } from "./pages/owner/DashBoard"
+import { DashBoard } from "./pages/owner/Dashboard"
 import { ManageBookings } from "./pages/owner/ManageBookings"
 import { ManageCars } from "./pages/owner/ManageCars"
 
