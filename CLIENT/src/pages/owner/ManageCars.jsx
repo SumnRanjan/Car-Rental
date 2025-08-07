@@ -5,7 +5,6 @@ import { Title } from "../../components/owner/Title"
 export const ManageCars = () => {
 
   const [cars , setCars] = useState([])
-
   
   const currency = import.meta.env.VITE_CURRENCY
 
