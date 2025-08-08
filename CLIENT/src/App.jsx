@@ -11,23 +11,24 @@ import { AddCar } from "./pages/owner/AddCar";
 import { DashBoard } from "./pages/owner/Dashboard";
 import { ManageBookings } from "./pages/owner/ManageBookings";
 import { ManageCars } from "./pages/owner/ManageCars";
+import { Login } from "./components/Login";
 
 export const App = () => {
   const location = useLocation();
-  // eslint-disable-next-line no-unused-vars
   const [showLogin, setShowLogin] = useState(false);
   const isOwnerPath = location.pathname.startsWith("/owner");
 
   return (
     <>
+      {showLogin && <Login setShowLogin={setShowLogin} />}
       {!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}
-
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/car-details/:id" element={<CarDetails />} />
         <Route path="/my-bookings" element={<MyBookings />} />
-
+  
         <Route path="/owner" element={<Layout />}>
           <Route index element={<DashBoard />} />
           <Route path="add-car" element={<AddCar />} />
