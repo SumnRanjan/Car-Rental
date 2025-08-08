@@ -36,7 +36,7 @@ export const ManageCars = () => {
             <tbody>
                 {
                   cars.map((car , index) =>(
-                    <tr key={index} className="border border-borderColor">
+                    <tr key={index} className="border border-borderColor border-l-0 border-r-0 border-b-0">
                       <td className="p-3 flex items-center gap-3">
                         <img src={car.image} alt="" className="h-12 w-12 aspect-square rounded-md object-cover" />
                         <div className="max-md:hidden">
