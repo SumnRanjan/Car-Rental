@@ -22,13 +22,13 @@ export const App = () => {
     <>
       {showLogin && <Login setShowLogin={setShowLogin} />}
       {!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/car-details/:id" element={<CarDetails />} />
         <Route path="/my-bookings" element={<MyBookings />} />
-  
+
         <Route path="/owner" element={<Layout />}>
           <Route index element={<DashBoard />} />
           <Route path="add-car" element={<AddCar />} />
