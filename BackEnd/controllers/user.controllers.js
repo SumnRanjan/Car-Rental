@@ -76,3 +76,15 @@ export const loginUser = async (req, res) => {
         return res.status(500).json({ success: false, message: error.message })
     }
 }
+
+// Get user data using token 
+
+export const getUserData = async(req , res) =>{
+    try {
+        const {user} = req;
+        res.status(200).json({ success: true, user })
+    } catch (error) {
+        console.log(error.message)
+        return res.status(500).json({ success: false, message: error.message })
+    }
+}
