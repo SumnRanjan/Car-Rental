@@ -14,7 +14,6 @@ export const verifyJWT = async (req , res , next) =>{
         token = token.split(" ")[1];
     }
 
-
     try {
         const decodeToke = jwt.verify(token , process.env.JWT_SECRET)
         

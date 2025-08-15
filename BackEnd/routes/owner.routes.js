@@ -6,5 +6,4 @@ const ownerRouter = express.Router()
 
 ownerRouter.post("/change-role" , verifyJWT , changeRoleToOwner)
 
-
 export default ownerRouter
